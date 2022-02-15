@@ -163,7 +163,6 @@ root.config(menu = menubar)
 def noVarName():
     # Define variaables no name
     pass
-    return
 
 # Welcome! 
 def welcomeFunc(root):
@@ -187,19 +186,33 @@ packDestroyButtonNow
 welcomeGS = Label(getStartedFrame, text = "Welcome!")  
 welcomeGS.pack()
 
+pswFrame = Infinity.Frame(root)
+def nextStep():
+    flname["state"] = "disabled"
+    pswFrame.pack()
+    global pswInput;
+    pswInput = Infinity.Entry(pswFrame, borderwidth=1)
+    pswInput.pack()
+    pswInput.insert(0, "ABCDFGHIJKLMNOP")
+    Infinity.Button(pswFrame, text = "Next ->", bg = "#40F10D", borderwidth=1, command = done).pack()
+
 flnLab = Label(getStartedFrame, text = "Full Name:")
 flnLab.pack()
 flname = Infinity.Entry(getStartedFrame)
 flname.insert(0, "Full Name")
 flname.pack()
-Infinity.Label(getStartedFrame, text = "Warning: DO NOT PRESS ENTER unless you completed entering the forms.", fg = "red").pack()
+Infinity.Button(getStartedFrame, text = "Next ->", bg = "#40F10D", borderwidth=1, command = nextStep).pack()
+Infinity.Label(getStartedFrame, text = "Warning: DO NOT PRESS F7 unless you completed entering the forms and complete password.", fg = "red").pack()
 
 def callback(event):
     flnameVal = flname.get()
     impMessagebox.showinfo(appTitle, 'Welcome ' + flnameVal + '!')
+    return
 
-root.bind('<Return>', callback)
-
+def done():
+    pswInput["state"] = "disabled"
+    Infinity.Label(pswFrame, text = "To really confirm, Press F7 to Setup.", fg = "green").pack()
+    root.bind('<F7>', callback)
 
 # Copyright 2022 by Samuel Santhosh
 
