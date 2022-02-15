@@ -8,3 +8,4 @@ You can use the following:
 - Visual Studio
 
 Or find another editor supporting python tkinter.
+I don't know how to compile the app. If you know, reply it in [infinityx.py](infinityx.py) and use the compiling code.
