@@ -1,0 +1,18 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<Information type="python" lib="tkinter">
+  <ProjectVersion of="Infinity">InfinityX 1.59.63.2 Virtual Machine</ProjectVersion>
+  <CodeInformation>
+    <Imports includesFromTag="FromImports">
+      tkinter as Infinity
+      datetime
+      sys
+      os
+    </Imports>
+    <FromImports>
+      tkinter import messagebox
+      tkinter import *
+      tkinter.ttk import *
+      tkinter.filedialog import asksaveasfile
+    </FromImports>
+  </CodeInformation>
+</Information>
